@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Add</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center">
+        <div class="col-4">
+            <form action="/add" method="post">
+                <h2 class="text-center">Add Student</h2>
+                <div class="mb-3">
+                    <label for="name-student" class="form-label">Name</label>
+                    <input type="text" name="studentName" class="form-control" id="name-student"/>
+                </div>
+                <div class="mb-3">
+                    <label for="class-student" class="form-label">Class</label>
+                    <input type="text" name="class" class="form-control" id="class-student" />
+                </div>
+                <div class="mb-3">
+                    <label for="theo" class="form-label">Theoretical Mark</label>
+                    <input type="number" name="theoMark" class="form-control" id="theo"/>
+                </div>
+                <div class="mb-3">
+                    <label for="pract" class="form-label">Practice Mark</label>
+                    <input type="number" name="practMark" class="form-control" id="pract"/>
+                </div>
+                <div class="mb-3">
+                    <label for="evol" class="form-label">Evoluation</label>
+                    <input type="text" name="evoluate" class="form-control" id="evol"/>
+                </div>
+                <div class="mb-3">
+                    <label for="descript" class="form-label">Description</label>
+                    <input type="text" name="description" class="form-control" id="descript"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+                <a href="/" class="btn btn-primary ms-2">Exit</a>
+            </form>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
