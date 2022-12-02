@@ -1,4 +1,4 @@
-const BaseController = require("../controllers/BaseController");
+const BaseController = require("../controllers/base.controller");
 const qs = require("qs");
 let idStudent = 0;
 class StudentController {
