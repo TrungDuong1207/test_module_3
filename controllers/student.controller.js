@@ -77,9 +77,9 @@ class StudentController {
     static async showEditPage(req, res, urlParse) {
         let idEdit = qs.parse(urlParse.query).id;
         idStudent = idEdit;
-        let editHTML = await BaseController.getTemplate("./views/edit.html");
+        let studentHTML = await BaseController.getTemplate("./views/edit.html");
         res.writeHead(200, { "Content-type": "text/html" });
-        sqlShowStudents = `SELECT * FROM students;`;
+        let sqlShowStudents = `SELECT * FROM students;`;
         let students = await BaseController.querySQL(sqlShowStudents);
         studentHTML = studentHTML.replace("{studentID}", students[0].studentID);
         studentHTML = studentHTML.replace("{name}", students[0].studentName);
@@ -99,10 +99,7 @@ class StudentController {
         })
 
         req.on("end", async () => {
-            const sqlAdd = `INSERT INTO students(studentName, theoreticalMark, practiceMark, description, class, evaluate) 
-                            VALUES (${student.studentName}, ${student.theoMark}, ${student.practMark},${student.description},${student.class},${student.evoluate});`;
-            await BaseController.querySQL(sqlAdd);
-
+            let student = qs.parse(data);
             let sqlEdit = `UPDATE students
                         SET studentName = "${student.studentName}", theoreticalMark = "${student.theoMark}", practiceMark = "${student.practMark}", class = "${student.class}", description = "${student.description}", evaluate = "${student.evoluate}"
                         WHERE roomId = ${idStudent};`
