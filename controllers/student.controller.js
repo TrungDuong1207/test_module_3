@@ -14,7 +14,7 @@ class StudentController {
             html += `<td><a class="text-decoration-none" href="/student?id=${student.studentID}">${student.studentName}</a></td>`;
             html += `<td>${student.class}</td>`;
             html += `<td>${student.evaluate}</td>`;
-            html += `<td><a class="btn btn-danger" href="/delete?id=${student.studentID} onclick="return confirm('Are you sure?')">Delete</a></td>`;
+            html += `<td><a class="btn btn-danger" onclick="deleteWarrning()" href="/delete?id=${student.studentID} ">Delete</a></td>`;
             html += `<td><a class="btn btn-primary" href="/edit?id=${student.studentID}">Edit</a></td>`;
             html += "</tr>";
         });
@@ -66,7 +66,7 @@ class StudentController {
         })
     }
     static async deleteStudent(req, res, urlParse) {
-        let idDelete = qs.parse(urlParse.query).index;
+        let idDelete = qs.parse(urlParse.query).id;
         idStudent = idDelete;
         const sqlDelete = `DELETE FROM students WHERE studentID = ${idDelete}`;
         await BaseController.querySQL(sqlDelete);
