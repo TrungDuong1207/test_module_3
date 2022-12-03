@@ -14,8 +14,8 @@ class StudentController {
             html += `<td><a class="text-decoration-none" href="/student?id=${student.studentID}">${student.studentName}</a></td>`;
             html += `<td>${student.class}</td>`;
             html += `<td>${student.evaluate}</td>`;
-            html += `<td><a class="btn btn-danger" href="/delete?id=${student.studentID}">Delete</a></td>`;
-            html += `<td><a class="btn btn-primary" href="/edit?id=${student.studentID} onclick="return confirm('Are you sure?')">Edit</a></td>`;
+            html += `<td><a class="btn btn-danger" href="/delete?id=${student.studentID} onclick="return confirm('Are you sure?')">Delete</a></td>`;
+            html += `<td><a class="btn btn-primary" href="/edit?id=${student.studentID}">Edit</a></td>`;
             html += "</tr>";
         });
         res.writeHead(200, { "Content-type": "text/html" });
@@ -102,7 +102,7 @@ class StudentController {
             let student = qs.parse(data);
             let sqlEdit = `UPDATE students
                         SET studentName = "${student.studentName}", theoreticalMark = "${student.theoMark}", practiceMark = "${student.practMark}", class = "${student.class}", description = "${student.description}", evaluate = "${student.evoluate}"
-                        WHERE roomId = ${idStudent};`
+                        WHERE roomId = ${idStudent};`;
             await BaseController.querySQL(sqlEdit);
             res.writeHead(301, { Location: '/' });
             res.end();
