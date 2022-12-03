@@ -14,7 +14,7 @@ class StudentController {
             html += `<td><a class="text-decoration-none" href="/student?id=${student.studentID}">${student.studentName}</a></td>`;
             html += `<td>${student.class}</td>`;
             html += `<td>${student.evaluate}</td>`;
-            html += `<td><a class="btn btn-danger" onclick="deleteWarrning()" href="/delete?id=${student.studentID} ">Delete</a></td>`;
+            html += `<td><a class="btn btn-danger" onclick="return confirm('Are you sure delete?')" href="/delete?id=${student.studentID} ">Delete</a></td>`;
             html += `<td><a class="btn btn-primary" href="/edit?id=${student.studentID}">Edit</a></td>`;
             html += "</tr>";
         });
