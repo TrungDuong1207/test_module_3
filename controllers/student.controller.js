@@ -102,7 +102,7 @@ class StudentController {
             let student = qs.parse(data);
             let sqlEdit = `UPDATE students
                         SET studentName = "${student.studentName}", theoreticalMark = "${student.theoMark}", practiceMark = "${student.practMark}", class = "${student.class}", description = "${student.description}", evaluate = "${student.evoluate}"
-                        WHERE roomId = ${idStudent};`;
+                        WHERE studentID = ${idStudent};`;
             await BaseController.querySQL(sqlEdit);
             res.writeHead(301, { Location: '/' });
             res.end();
